@@ -11,7 +11,7 @@ public class ConIndustryTriggerHandler
 			}
 		}
 		Map<Id, Account> accMap=new Map<Id,Account>();
-		for(Account acc:[Select Id,Contacts, Industry from Accounts where Id IN :accSet])
+		for(Account acc:[Select Id,Industry from Accounts where Id IN :accSet])
 		{
 			accMap.put(acc.Id,acc);
 		}
