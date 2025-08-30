@@ -5,6 +5,6 @@ Trigger AccountTrigger on Account(before Insert, before Update)
 {
 	if(Trigger.isBefore &&(Trigger.isInsert || Trigger.isUpdate))
 	{
-		AccountTriggerHandler.setIndustry(Trigger.new);
+		AccountTriggerHandler.setIndustry(Trigger.new,Trigger.oldMap,Trigger.isInsert,Trigger.isUpdate);
 	}
 }
