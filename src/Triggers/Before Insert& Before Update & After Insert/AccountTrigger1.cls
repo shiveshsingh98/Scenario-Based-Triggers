@@ -6,6 +6,10 @@ Trigger AccountTrigger1 on Account(before Insert, before Update,after Insert)
 {
 	if(Trigger.isBefore && (Trigger.isInsert || Trigger.isUpdate))
 	{
-		AccountTriggerHandler1.populateIndustry(Trigger.new
+		AccountTriggerHandler1.populateIndustry(Trigger.new);
+	}
+	if(Trigger.isAfter && Trigger.isInsert)
+	{
+		AccountTriggerHandler1.createOpp(Trigger.new);
 	}
 }
