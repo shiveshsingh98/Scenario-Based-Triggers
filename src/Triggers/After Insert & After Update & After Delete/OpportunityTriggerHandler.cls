@@ -52,4 +52,31 @@ public class OpportunityTriggerHandler
 			update accList;
 		}
 	}
+	
+	public static void delUpdateAccRevenue(List<Opportunity> oppList)
+	{
+		List<Account> accList=new List<Account>();
+		Map<Id,Decimal> accMap=new Map<Id,Decimal>();
+		Set<Id> accSet=new Set<Id>();
+		for(Opportunity opp:oppList)
+		{
+			if(opp.AccountId!=null && opp.Amount!=null)
+			{
+				accSet.add(opp.AccountId);
+			}
+		}
+		for(AggregateResult ar :[Select AccountId, SUM(Amount) amt from Opportunity where AccountId IN : accSet GROUP BY AccountId])
+		{
+			accMap.put((Id)ar.get('AccountId'),(Decimal)ar.get('amt'));
+		}
+		for(Account acc:[Select Id,AnnualRevenue__c from Account where Id IN :accSet])
+		{
+			acc.AnnualRevenue__c=accMap.get(acc.Id) ?? 0;
+			accList.add(acc);
+		}
+		if(!accList.isEmpty())
+		{
+			update accList;
+		}
+	}
 }
