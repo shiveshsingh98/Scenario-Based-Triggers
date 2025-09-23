@@ -31,14 +31,16 @@ public class AccountTriggerHandler6
 	public static void createConOnUpdate(List<Account> accList,Map<Id,Account> accMap)
 	{
 		List<Contact> con=new List<Contact>();
+		List<Contact> conDelete=new List<Contact>();
 		Set<Id> accSet=new Set<Id>();
-		Map<Id,List<Contact>> contactsMap=new Map<Id,List<Contact>();
+		Map<Id,List<Contact>> contactsMap=new Map<Id,List<Contact>>();
 		for(Contact c:[Select Id, LastName,AccountId from Contact where AccountId IN :accList])
 		{
-			if(contactsMap.containsKey(c.AccountId)
+			if(!contactsMap.containsKey(c.AccountId))
 			{
-				
+				contactsMap.put(c.AccountId,new List<Contact>());
 			}
+			contactsMap.get(c.AccountId).add(c);
 		}
 		for(Account acc: accList)
 		{
@@ -53,17 +55,19 @@ public class AccountTriggerHandler6
 			Integer newValue=acc.Number_of_Locations__c;
 			Integer biggerValue=0;
 			Integer num=0;
+			//need to Improve
 			if(oldValue>newValue)
 			{
 				num=oldValue - newValue;
 				Integer numOfCon=oldValue;
-				for(Integer n=newValue-1;n<num;n++)
+				for(Integer n=oldValue-1;n>newValue;n--)
 				{
-					Contact c=new Contact();
-					c.LastName=acc.Name+numOfCon;
-					c.AccountId=acc.Id;
-					con.add(c);
-					numOfCon++;
+					String lastname=acc.Name+n;
+					if(contactsMap.get(acc.Id).lastName==lastname)
+					{
+						conDelete.add(c);
+					}
+					numOfCon--;
 				}
 			}
 			else if(newValue>oldValue)
@@ -85,6 +89,10 @@ public class AccountTriggerHandler6
 		if(!con.isEmpty())
 		{
 			insert con;
+		}
+		if(!conDelete.isEmpty())
+		{
+			delete conDelete;
 		}
 	}
 }
