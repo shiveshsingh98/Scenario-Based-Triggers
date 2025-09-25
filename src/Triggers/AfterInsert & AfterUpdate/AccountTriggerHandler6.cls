@@ -60,12 +60,15 @@ public class AccountTriggerHandler6
 			{
 				num=oldValue - newValue;
 				Integer numOfCon=oldValue;
-				for(Integer n=oldValue-1;n>newValue;n--)
+				for(Integer n=numOfCon-1;n>newValue;n--)
 				{
-					String lastname=acc.Name+n;
-					if(contactsMap.get(acc.Id).lastName==lastname)
+					String lname=acc.Name+n;
+					for(Contact c:contactsMap.get(acc.Id))
 					{
-						conDelete.add(c);
+						if(c.LastName==lname)
+						{
+							conDelete.add(c);
+						}
 					}
 					numOfCon--;
 				}
@@ -73,14 +76,14 @@ public class AccountTriggerHandler6
 			else if(newValue>oldValue)
 			{
 				num=newValue - oldValue;
-				Integer numOfCon=newValue;
-				for(Integer n=0;n<num;n++)
+				Integer numOfCon1=oldValue;
+				for(Integer n=numOfCon1;n<newValue;n++)
 				{
 					Contact c=new Contact();
-					c.LastName=acc.Name+numOfCon;
+					c.LastName=acc.Name+numOfCon1;
 					c.AccountId=acc.Id;
 					con.add(c);
-					numOfCon++;
+					numOfCon1++;
 				}
 			}
 			
@@ -96,7 +99,3 @@ public class AccountTriggerHandler6
 		}
 	}
 }
-
-
-7
-5
