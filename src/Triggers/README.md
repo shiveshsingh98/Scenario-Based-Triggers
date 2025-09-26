@@ -83,4 +83,5 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 22. **Opportunity Closed State Restriction**  
     - If Opportunity is Closed Won/Lost, only Owner, Manager, or System Admin can edit.  
 
-
+23. **Opportunity Stage → Auto Update Fields**  
+	- When an Opportunity's Stage is updated to "Closed Won", the system should automatically set the Close Date to the current date and update the Type field to "New Customer".  
