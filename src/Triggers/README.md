@@ -85,5 +85,10 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 
 23. **Opportunity Stage → Auto Update Fields**  
 	- When an Opportunity's Stage is updated to "Closed Won", the system should automatically set the Close Date to the current date and update the Type field to "New Customer".  
+	
 24. **Contact – Populate Other Phone from Account**
 	- When a Contact is inserted or updated, if the related Account has a Phone number, populate the Contact’s Other Phone field with the Account Phone.
+	
+24. **Account Duplicate Restriction**
+
+	- If a user tries to create an Account with a Name that already exists, block the creation and show an error message.
