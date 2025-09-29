@@ -90,5 +90,7 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 	- When a Contact is inserted or updated, if the related Account has a Phone number, populate the Contact’s Other Phone field with the Account Phone.
 	
 24. **Account Duplicate Restriction**
-
 	- If a user tries to create an Account with a Name that already exists, block the creation and show an error message.
+	
+25. **Sync Shipping Address**
+	-Your Company wants to ensure that the shipping address of an Account record is always in sync with the billing address
