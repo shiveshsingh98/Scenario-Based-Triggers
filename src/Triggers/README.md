@@ -94,3 +94,6 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 	
 25. **Sync Shipping Address**
 	-Your Company wants to ensure that the shipping address of an Account record is always in sync with the billing address
+	
+26. **Prevent Account Deletion**
+	-Prevent an account from deleting with Trigger, if it has 2 or more contacts.
