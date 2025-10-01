@@ -97,3 +97,6 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 	
 26. **Prevent Account Deletion**
 	-Prevent an account from deleting with Trigger, if it has 2 or more contacts.
+	
+27. **Update Opportunity City**
+	-Write a trigger to update City field in all related Opportunity, when City field is updated in Account.
