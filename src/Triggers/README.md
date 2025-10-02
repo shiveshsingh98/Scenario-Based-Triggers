@@ -100,3 +100,6 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 	
 27. **Update Opportunity City**
 	-Write a trigger to update City field in all related Opportunity, when City field is updated in Account.
+	
+28. **Account Contact Phone Sync**
+	-Suppose you are a sales manager for a company that sells products to other businesses. Your team uses Salesforce to manage customer accounts and   contacts, and you want to ensure that all contacts associated with a particular account have the same phone number as the account.
