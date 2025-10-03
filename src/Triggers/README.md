@@ -1,7 +1,7 @@
 # Salesforce Trigger Scenarios
 
 This file contains a list of all trigger-based scenario questions I have practiced so far.  
-Each scenario can be implemented with a Trigger, Handler, and Test class.  
+Each scenario can be implemented with a Trigger and Handler class.  
 
 ---
 
@@ -103,3 +103,6 @@ Each scenario can be implemented with a Trigger, Handler, and Test class.
 	
 28. **Account Contact Phone Sync**
 	-Suppose you are a sales manager for a company that sells products to other businesses. Your team uses Salesforce to manage customer accounts and   contacts, and you want to ensure that all contacts associated with a particular account have the same phone number as the account.
+	
+29. **Task creation on Opportunity Amount > 10000**
+	-Write an Apex trigger on the Opportunity object that performs two different actions based on whether the record is inserted or updated. When a new Opportunity is inserted with an Amount greater than 10,000, the trigger should automatically create a Task with the subject “Follow up on new high-value opportunity,” priority set to High, status as Not Started, and the due date set to tomorrow. Additionally, when an existing Opportunity is updated and the Amount field is changed to a value greater than 10,000, another Task should be created with the subject “Re-check updated high-value opportunity,” along with the same values for priority, status, and due date.
