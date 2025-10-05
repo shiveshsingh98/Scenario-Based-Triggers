@@ -109,3 +109,6 @@ Each scenario can be implemented with a Trigger and Handler class.
 	
 30. **Account Type Update on more than 5 Opp**
 	-When an Account has more than 5 closed won Opportunities, update its Type to “VIP Customer”.
+	
+31. **Sync Industry with Child Account**
+	-When a child Account’s Industry changes, update the parent Account’s Industry to match the child’s new Industry.
