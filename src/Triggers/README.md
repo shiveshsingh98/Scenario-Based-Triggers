@@ -93,22 +93,25 @@ Each scenario can be implemented with a Trigger and Handler class.
 	- If a user tries to create an Account with a Name that already exists, block the creation and show an error message.
 	
 25. **Sync Shipping Address**
-	-Your Company wants to ensure that the shipping address of an Account record is always in sync with the billing address
+	- Your Company wants to ensure that the shipping address of an Account record is always in sync with the billing address
 	
 26. **Prevent Account Deletion**
-	-Prevent an account from deleting with Trigger, if it has 2 or more contacts.
+	- Prevent an account from deleting with Trigger, if it has 2 or more contacts.
 	
 27. **Update Opportunity City**
-	-Write a trigger to update City field in all related Opportunity, when City field is updated in Account.
+	- Write a trigger to update City field in all related Opportunity, when City field is updated in Account.
 	
 28. **Account Contact Phone Sync**
-	-Suppose you are a sales manager for a company that sells products to other businesses. Your team uses Salesforce to manage customer accounts and   contacts, and you want to ensure that all contacts associated with a particular account have the same phone number as the account.
+	- Suppose you are a sales manager for a company that sells products to other businesses. Your team uses Salesforce to manage customer accounts and   contacts, and you want to ensure that all contacts associated with a particular account have the same phone number as the account.
 	
 29. **Task creation on Opportunity Amount > 10000**
-	-Write an Apex trigger on the Opportunity object that performs two different actions based on whether the record is inserted or updated. When a new Opportunity is inserted with an Amount greater than 10,000, the trigger should automatically create a Task with the subject “Follow up on new high-value opportunity,” priority set to High, status as Not Started, and the due date set to tomorrow. Additionally, when an existing Opportunity is updated and the Amount field is changed to a value greater than 10,000, another Task should be created with the subject “Re-check updated high-value opportunity,” along with the same values for priority, status, and due date.
+	- Write an Apex trigger on the Opportunity object that performs two different actions based on whether the record is inserted or updated. When a new Opportunity is inserted with an Amount greater than 10,000, the trigger should automatically create a Task with the subject “Follow up on new high-value opportunity,” priority set to High, status as Not Started, and the due date set to tomorrow. Additionally, when an existing Opportunity is updated and the Amount field is changed to a value greater than 10,000, another Task should be created with the subject “Re-check updated high-value opportunity,” along with the same values for priority, status, and due date.
 	
 30. **Account Type Update on more than 5 Opp**
-	-When an Account has more than 5 closed won Opportunities, update its Type to “VIP Customer”.
+	- When an Account has more than 5 closed won Opportunities, update its Type to “VIP Customer”.
 	
 31. **Sync Industry with Child Account**
-	-When a child Account’s Industry changes, update the parent Account’s Industry to match the child’s new Industry.
+	- When a child Account’s Industry changes, update the parent Account’s Industry to match the child’s new Industry.
+	
+32. **Account Sum of Opportunities**
+	- Whenever an Opportunity is inserted,updated, or deleted,update the parent Account's custom field Total_Opportunity_Amount__c with the sum of all related Opportunities' Amounts.
