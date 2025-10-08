@@ -115,3 +115,6 @@ Each scenario can be implemented with a Trigger and Handler class.
 	
 32. **Account Sum of Opportunities**
 	- Whenever an Opportunity is inserted,updated, or deleted,update the parent Account's custom field Total_Opportunity_Amount__c with the sum of all related Opportunities' Amounts.
+	
+33. **Opportunity CloseDate updates on OpportunityLineItem**
+	- Write a trigger on Opportunity Object that updates the related OpportunityLineItem whenever the Opportunity's CloseDate is modified.
