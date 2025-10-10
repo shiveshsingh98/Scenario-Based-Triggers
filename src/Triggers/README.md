@@ -118,3 +118,6 @@ Each scenario can be implemented with a Trigger and Handler class.
 	
 33. **Opportunity CloseDate updates on OpportunityLineItem**
 	- Write a trigger on Opportunity Object that updates the related OpportunityLineItem whenever the Opportunity's CloseDate is modified.
+	
+34. **Update Account Description with Opportunity Name**
+	- Write an Apex trigger to update the Account description with opportunity name that has the Amount.
