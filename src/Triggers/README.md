@@ -121,3 +121,6 @@ Each scenario can be implemented with a Trigger and Handler class.
 	
 34. **Update Account Description with Opportunity Name**
 	- Write an Apex trigger to update the Account description with opportunity name that has the Amount.
+	
+35. **Prevent Account Deletion If Related Contact is there**
+	- Write a trigger in which if an account that has related contacts and the user tries to delete that account it throws you an error "Account cannot be 	deleted".
