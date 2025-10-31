@@ -124,3 +124,7 @@ Each scenario can be implemented with a Trigger and Handler class.
 	
 35. **Prevent Account Deletion If Related Contact is there**
 	- Write a trigger in which if an account that has related contacts and the user tries to delete that account it throws you an error "Account cannot be 	deleted".
+	
+36. **Prevent Too many contacts under Accounts**
+	- When a user tries to insert a new Contact, if the parent Account already has more than 5 Contacts, prevent the insert and show an error message:
+      “An Account cannot have more than 5 Contacts.”
